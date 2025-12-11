@@ -203,7 +203,8 @@ export class S3BaseBucket {
         ...params.metadata
       });
 
-      console.log('policy111');
+      console.log('policy111', policy);
+      console.log('policy111', this.externalClient);
 
       const { formData, postURL } = await this.externalClient.presignedPostPolicy(policy);
 
