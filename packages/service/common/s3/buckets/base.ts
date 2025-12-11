@@ -30,6 +30,7 @@ export class S3BaseBucket {
     public options: Partial<S3OptionsType> = defaultS3Options
   ) {
     options = { ...defaultS3Options, ...options };
+    console.log('S3 Options:', options);
     this.options = options;
     this._client = new Client(options as S3OptionsType);
 
@@ -50,7 +51,9 @@ export class S3BaseBucket {
         port: externalPort,
         accessKey: options.accessKey,
         secretKey: options.secretKey,
-        transportAgent: options.transportAgent
+        transportAgent: options.transportAgent,
+        pathStyle: options.pathStyle,
+        region: options.region
       });
     }
 

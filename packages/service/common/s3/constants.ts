@@ -40,7 +40,8 @@ export const defaultS3Options: {
     : process.env.HTTPS_PROXY
       ? new HttpsProxyAgent(process.env.HTTPS_PROXY)
       : undefined,
-  pathStyle: process.env.S3_PATH_STYLE === 'true' ? true : false
+  pathStyle: process.env.S3_PATH_STYLE === 'true' ? true : false,
+  region: process.env.S3_REGIN || undefined
 };
 
 export const S3Buckets = {
