@@ -203,7 +203,11 @@ export class S3BaseBucket {
         ...params.metadata
       });
 
+      console.log('policy111');
+
       const { formData, postURL } = await this.externalClient.presignedPostPolicy(policy);
+
+      console.log('policy333');
 
       if (expiredHours) {
         await MongoS3TTL.create({
